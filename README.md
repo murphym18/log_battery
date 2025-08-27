@@ -8,11 +8,12 @@ This tool logs battery data every minute to CSV files, designed for battery endu
 
 ## Installation
 
-1. Install the systemd service:
+1. Install the systemd user service:
 ```bash
-sudo cp battery-logger.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable battery-logger
+mkdir -p ~/.config/systemd/user
+cp battery-logger.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable battery-logger
 ```
 
 ## Battery Rundown Test Procedure
