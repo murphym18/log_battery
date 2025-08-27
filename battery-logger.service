@@ -1,0 +1,13 @@
+[Unit]
+Description=Battery Logger
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /var/home/michael/Projects/log_battery/battery_log.py
+Restart=no
+User=michael
+WorkingDirectory=/var/home/michael/Projects/log_battery
+
+[Install]
+WantedBy=multi-user.target
